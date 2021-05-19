@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ArticlModel } from '../models/news.moddel';
+import { ArticlModel } from '../../models/news.moddel';
 
 @Component({
   selector: 'app-news-list',
