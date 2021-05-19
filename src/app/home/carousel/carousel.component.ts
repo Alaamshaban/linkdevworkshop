@@ -35,17 +35,17 @@ export class CarouselComponent implements OnInit {
   ngOnInit(): void {
     this.tempData = [];
 
-    this.carouselTileItems$ = interval(500).pipe(
-      startWith(-1),
-      take(30),
-      map(val => {
-        const data = (this.tempData = [
-          ...this.tempData,
-          this.images[Math.floor(Math.random() * this.images.length)]
-        ]);
-        return data;
-      })
-    );
+    // this.carouselTileItems$ = interval(500).pipe(
+    //   startWith(-1),
+    //   take(30),
+    //   map(val => {
+    //     const data = (this.tempData = [
+    //       ...this.tempData,
+    //       this.images[Math.floor(Math.random() * this.images.length)]
+    //     ]);
+    //     return data;
+    //   })
+    // );
   }
 
   /* It will be triggered on every slide*/

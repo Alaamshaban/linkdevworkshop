@@ -7,6 +7,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 import {RouterModule} from '@angular/router';
@@ -19,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
 import { NavItemComponent } from './nav-item/nav-item.component';
 import { NewsItemComponent } from './news-item/news-item.component';
+import { NewsListComponent } from './news-list/news-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { NewsItemComponent } from './news-item/news-item.component';
     FooterComponent,
     SearchComponent,
     NavItemComponent,
-    NewsItemComponent
+    NewsItemComponent,
+    NewsListComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +40,7 @@ import { NewsItemComponent } from './news-item/news-item.component';
     MatListModule,
     MatButtonModule,
     MatCardModule,
+    MatPaginatorModule,
     RouterModule
   ],
   exports: [NavigationComponent,
@@ -44,7 +48,9 @@ import { NewsItemComponent } from './news-item/news-item.component';
     FooterComponent,
     SearchComponent,
     NewsItemComponent,
+    NewsListComponent,
     MatIconModule,
+    MatPaginatorModule,
     MatButtonModule]
 })
 export class SharedModule { }

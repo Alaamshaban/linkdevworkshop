@@ -15,9 +15,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.newService.Articles.subscribe(res => {
-      this.articles = res.filter(article => article.showOnHomepage).sort((a, b) => {
-        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-      });
+      this.articles = res.filter(article => article.showOnHomepage);
     });
   }
 
