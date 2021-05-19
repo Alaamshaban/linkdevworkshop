@@ -11,7 +11,6 @@ export class NavItemComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
-    console.log(this.navItem)
   }
 
 }
