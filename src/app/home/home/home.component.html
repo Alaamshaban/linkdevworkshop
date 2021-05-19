@@ -1,6 +1,12 @@
 <div class="carousel">
     <app-carousel></app-carousel>
 </div>
-<div class="news" *ngFor="let i of [1,2,3]">
+<div class="news" >
+    <ng-container *ngFor="let article of articles">
+        <div class="news-item">
+        <app-news-item [article]="article"></app-news-item>
+        </div>
+    </ng-container>
+
 </div>
 <img src="https://media-cdn.tripadvisor.com/media/photo-s/04/a6/25/b6/safari-court-hotel.jpg" id="responsive-image"> 

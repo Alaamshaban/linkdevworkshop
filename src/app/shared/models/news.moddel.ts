@@ -5,7 +5,7 @@ export interface ArticlModel {
     title: string;
     description: string;
     urlToImage: string;
-    publishedA: string;
+    publishedAt: string;
     content: string;
 }
 

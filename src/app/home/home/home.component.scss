@@ -1,4 +1,32 @@
 .carousel{
     background-color: red;
 }
+$desktop: 1280px;
 #responsive-image {  width: 100%;  max-height: 38vh; } 
+
+@mixin column-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.news-item {
+   @include column-flex();
+}
+.news{
+    display: block;
+}
+@media only screen and (min-width: $desktop) {
+    .news{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }    
+    .news-item {
+        @include column-flex();
+        width: 33%;
+     }
+}

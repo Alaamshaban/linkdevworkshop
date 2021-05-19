@@ -1,0 +1,15 @@
+<mat-card class="news-card">
+    <img mat-card-image [src]="article.urlToImage" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <h1>
+        {{article.title}}
+      </h1>
+        <p>
+            {{article.description}}
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-icon class="calendar-icon">calendar_today</mat-icon>
+     <span>{{article.publishedAt | date:'fullDate'}}</span> 
+    </mat-card-actions>
+</mat-card>
