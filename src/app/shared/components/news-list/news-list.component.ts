@@ -6,11 +6,9 @@ import { ArticlModel } from '../../models/news.moddel';
   templateUrl: './news-list.component.html',
   styleUrls: ['./news-list.component.scss']
 })
-export class NewsListComponent implements OnInit {
+export class NewsListComponent  {
   @Input() articles: ArticlModel[];
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor() { }
 
 }

@@ -25,4 +25,10 @@ export class NewsService {
   get Sources(): Observable<SourceCategoryModel[]> {
     return of(this.SourceCategoriesList);
   }
+
+  getArticle(id: number): Observable<ArticlModel> {
+    return of(this.ArticlesList).pipe(map(
+      (result: ArticlModel[]) => result.find(article => article.id === id)
+    ));
+  }
 }

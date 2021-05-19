@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ArticlModel } from '../../models/news.moddel';
 
 @Component({
@@ -6,13 +7,15 @@ import { ArticlModel } from '../../models/news.moddel';
   templateUrl: './news-item.component.html',
   styleUrls: ['./news-item.component.scss']
 })
-export class NewsItemComponent implements OnInit {
+export class NewsItemComponent {
 
   @Input() article: ArticlModel;
+  @Input() detailed: boolean;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  readMore(articleId: number): void {
+    this.router.navigate(['/details', articleId]);
   }
 
 }
