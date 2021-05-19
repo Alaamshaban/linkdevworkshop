@@ -1,5 +1,12 @@
-<app-header></app-header>
-<app-menu></app-menu>
-<!-- router-outlet is here -->
-<ng-content></ng-content>
-<app-footer></app-footer>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push" class="sw-sidenav" autosize>
+        <mat-list role="list">
+            <ng-container *ngFor="let link of links">
+                <app-nav-item [navItem]="link"></app-nav-item>
+            </ng-container>
+        </mat-list>
+    </mat-sidenav>
+    <app-header></app-header>
+        <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</mat-sidenav-container>
