@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
-import { SidenavService } from '../services/sidenav.service';
+import { SidenavService } from '../../services/sidenav.service';
 
 @Component({
   selector: 'app-navigation',
@@ -57,9 +57,7 @@ export class NavigationComponent implements AfterViewInit {
       path: '/'
     },
   ];
-  constructor(private sideNavService: SidenavService) {
-
-  }
+  constructor(private sideNavService: SidenavService) {}
 
   ngAfterViewInit(): void {
     this.sideNavService.setSidenav(this.sidenav);

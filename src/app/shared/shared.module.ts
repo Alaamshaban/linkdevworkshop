@@ -11,16 +11,17 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 import {RouterModule} from '@angular/router';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { SearchComponent } from './components/search/search.component';
+import { NavItemComponent } from './components/nav-item/nav-item.component';
+import { NewsItemComponent } from './components/news-item/news-item.component';
+import { NewsListComponent } from './components/news-list/news-list.component';
 
 
 
-import { NavigationComponent } from './navigation/navigation.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
-import { NavItemComponent } from './nav-item/nav-item.component';
-import { NewsItemComponent } from './news-item/news-item.component';
-import { NewsListComponent } from './news-list/news-list.component';
+
 
 @NgModule({
   declarations: [
