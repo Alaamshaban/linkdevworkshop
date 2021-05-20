@@ -1,5 +1,5 @@
 <mat-card class="news-card">
-    <img mat-card-image [src]="article.urlToImage" alt="Photo of a Shiba Inu">
+    <img mat-card-image [ngClass]="{'large-image':detailed}" [src]="article.urlToImage" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <h1 class="article-title" (click)="readMore(article.id)">
             {{article.title}}

@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html { background-color: #000;} 
+html { background-color: #EFEFEF;} 
 body {
     min-height: 100vh;
-    background-color: papayawhip; 
+    background-color: #EFEFEF; 
     margin: 0px auto;
 }
 .page{
     margin: 50px;
+}
+.mat-toolbar{
+    background-color: #338997;
 }

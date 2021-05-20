@@ -1,5 +1,5 @@
 .sw-sidenav{
-    background-color: lightslategrey;
+    background-color: #338896;
     width: 20%;
     top: 65px;
     min-height:100vh
@@ -8,6 +8,11 @@
   .mat-drawer-container[fullscreen]{
     position: relative;
   }
-  ::ng-deep .mat-drawer-inner-container{
-    overflow: hidden !important;
+  ::ng-deep {
+    .mat-drawer-inner-container{
+      overflow: hidden !important;
+    }
+    .mat-drawer-content{
+      background-color: #EFEFEF;
+    }
   }
