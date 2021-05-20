@@ -1,7 +1,7 @@
 
 $desktop: 1280px;
 
-@mixin column-flex {
+@mixin row-flex-wrap {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -9,7 +9,7 @@ $desktop: 1280px;
 }
 
 .news-item {
-   @include column-flex();
+   @include row-flex-wrap();
 }
 .news{
     display: block;
@@ -24,7 +24,7 @@ $desktop: 1280px;
         justify-content: space-around;
     }    
     .news-item {
-        @include column-flex();
+        @include row-flex-wrap();
         width: 33%;
      }
 }
