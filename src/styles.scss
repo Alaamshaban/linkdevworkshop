@@ -2,15 +2,18 @@
 
 html {
   background-color: #efefef;
+ 
 }
 body {
-  min-height: 100vh;
+  height: 100vh;
   background-color: #efefef;
   margin: 0px auto;
 }
 .page {
-  margin: 50px;
-  color: #000;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: space-between;
 }
 .mat-toolbar {
   background-color: #338997;

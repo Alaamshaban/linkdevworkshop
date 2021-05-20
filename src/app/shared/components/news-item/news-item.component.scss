@@ -9,7 +9,8 @@
           height: 30vh;
         }
         .large-image{
-          height: 60vh;
+          height: 300px;
+          object-fit: fill;
         }
         mat-card-content{
           min-height: 50vh;

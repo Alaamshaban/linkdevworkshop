@@ -37,7 +37,7 @@ export class NewsService {
       if (filter.text) {
         return of(this.ArticlesList).pipe(map(
           (result: ArticlModel[]) => result.filter(article => (article.sourceID === filter.category &&
-            this.isTextMatched(filter.text, article.title)))
+            this.isTextMatched(article.title, filter.tex)))
         ));
       } else {
         return of(this.ArticlesList).pipe(map(
@@ -46,21 +46,17 @@ export class NewsService {
       }
     } else {
       return of(this.ArticlesList).pipe(map(
-        (result: ArticlModel[]) => result.filter(article => (this.isTextMatched(filter.text, article.title)))
+        (result: ArticlModel[]) => result.filter(article => (this.isTextMatched(article.title, filter.text)))
       ));
     }
   }
 
-  isTextMatched(str, sub): boolean {
-    sub = sub.toLowerCase();
-    if (str) {
-      return str
-        .toLowerCase()
-        .startsWith(sub.slice(0, Math.max(str.length - 1, 1)));
-    } else {
+  isTextMatched(word: string, subString: string): boolean {
+    if (word) {
+      if (word.search(subString.toLocaleLowerCase()) === -1) {
+        return false;
+      }
       return true;
-    }
-
   }
-
+}
 }
