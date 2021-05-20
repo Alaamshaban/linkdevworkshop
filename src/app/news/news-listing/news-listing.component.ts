@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlModel } from 'src/app/shared/models/news.moddel';
+import { Observable } from 'rxjs';
+import { ArticlModel, SourceCategoryModel } from 'src/app/shared/models/news.moddel';
 import { NewsService } from 'src/app/shared/services/news.service';
 
 @Component({
@@ -12,10 +13,12 @@ export class NewsListingComponent implements OnInit {
   pageLength: number;
   pageSize = 10;
   splicedArticles: ArticlModel[];
+  categories$: Observable<SourceCategoryModel[]>;
 
-  constructor(private newService: NewsService) { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
+    this.categories$ = this.newsService.Sources;
     this.serveData();
   }
 
@@ -25,10 +28,18 @@ export class NewsListingComponent implements OnInit {
   }
 
   serveData(): void {
-    this.newService.Articles.subscribe(articles => {
+    this.newsService.Articles.subscribe(articles => {
       this.articles = articles;
       this.pageLength = this.articles.length;
       this.splicedArticles = articles.slice(((0 + 1) - 1) * this.pageSize).slice(0, this.pageSize);
+    });
+  }
+
+  search(searchData): void {
+    this.newsService.searchArticles(searchData).subscribe(res => {
+      this.articles = res;
+      this.pageLength = res.length;
+      this.splicedArticles = this.articles.slice(((0 + 1) - 1) * this.pageSize).slice(0, this.pageSize);
     });
   }
 }

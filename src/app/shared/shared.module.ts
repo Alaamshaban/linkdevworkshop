@@ -18,6 +18,10 @@ import { SearchComponent } from './components/search/search.component';
 import { NavItemComponent } from './components/nav-item/nav-item.component';
 import { NewsItemComponent } from './components/news-item/news-item.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -36,6 +40,10 @@ import { NewsListComponent } from './components/news-list/news-list.component';
   imports: [
     CommonModule,
     MatToolbarModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatInputModule,
     MatIconModule,
     MatSidenavModule,
     MatListModule,

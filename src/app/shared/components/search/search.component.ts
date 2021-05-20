@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { SourceCategoryModel } from '../../models/news.moddel';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  @Input() categories$: Observable<SourceCategoryModel[]>;
+  @Output() SearchFilter = new EventEmitter();
+  form: FormGroup;
+
+  constructor(
+    private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.setForm();
+  }
+
+  setForm(): void {
+    this.form = this.fb.group({
+      category: [null],
+      text: ['']
+    });
+  }
+
+  search(): void {
+    this.SearchFilter.next(this.form.value);
   }
 
 }

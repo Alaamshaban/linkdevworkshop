@@ -31,4 +31,36 @@ export class NewsService {
       (result: ArticlModel[]) => result.find(article => article.id === id)
     ));
   }
+
+  searchArticles(filter): Observable<ArticlModel[]> {
+    if (filter.category && filter.category !== 'none') {
+      if (filter.text) {
+        return of(this.ArticlesList).pipe(map(
+          (result: ArticlModel[]) => result.filter(article => (article.sourceID === filter.category &&
+            this.isTextMatched(filter.text, article.title)))
+        ));
+      } else {
+        return of(this.ArticlesList).pipe(map(
+          (result: ArticlModel[]) => result.filter(article => (article.sourceID === filter.category))
+        ));
+      }
+    } else {
+      return of(this.ArticlesList).pipe(map(
+        (result: ArticlModel[]) => result.filter(article => (this.isTextMatched(filter.text, article.title)))
+      ));
+    }
+  }
+
+  isTextMatched(str, sub): boolean {
+    sub = sub.toLowerCase();
+    if (str) {
+      return str
+        .toLowerCase()
+        .startsWith(sub.slice(0, Math.max(str.length - 1, 1)));
+    } else {
+      return true;
+    }
+
+  }
+
 }

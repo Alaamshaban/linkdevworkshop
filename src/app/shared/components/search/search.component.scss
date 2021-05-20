@@ -1,0 +1,40 @@
+$desktop: 1280px;
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-container > .FormCell {
+  margin: 10px;
+  width: 100%;
+  > mat-form-field {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: $desktop) {
+  .flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .flex-container > .FormCell {
+    margin: 10px;
+    width: 35%;
+    > mat-form-field {
+      width: 100%;
+    }
+  }
+  .search-btn {
+    background: #8dc043 0% 0% no-repeat padding-box;
+    border-radius: 0px 5px 5px 0px;
+    opacity: 1;
+    margin: -10px;
+    width: 3.5em !important;
+    height: 3.7em !important;
+  }
+}

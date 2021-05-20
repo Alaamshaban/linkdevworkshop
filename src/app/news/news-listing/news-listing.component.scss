@@ -4,12 +4,3 @@
     justify-content: center;
     margin: 10px;
 }
-@mixin row-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.search{
-    @include row-flex()
-}

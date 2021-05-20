@@ -1,7 +1,5 @@
 <div class="page">
-    <div class="search">
-        <app-search></app-search>
-    </div>
+        <app-search [categories$]="categories$" (SearchFilter)="search($event)"></app-search>
     <app-news-list [articles]="splicedArticles"></app-news-list>
     <div class="paginator">
         <mat-paginator (page)="pageChangeEvent($event)" [length]="pageLength" [pageSize]="pageSize">
