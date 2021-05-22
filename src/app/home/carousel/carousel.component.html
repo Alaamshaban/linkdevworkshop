@@ -3,9 +3,7 @@
   <button NguCarouselPrev class='leftRs'>&lt;</button>
 
   <ngu-item *nguCarouselDef="let item; index as i;">
-    <div class="bannerStyle" [style.background]="'url(' + item + ')'">
-      <h1>{{ i + 1 }}</h1>
-    </div>
+<img [src]="item" class="banner"/>
   </ngu-item>
 
   <button NguCarouselNext class='rightRs'>&gt;</button>

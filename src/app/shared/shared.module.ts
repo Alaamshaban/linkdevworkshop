@@ -35,7 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     NavItemComponent,
     NewsItemComponent,
-    NewsListComponent
+    NewsListComponent,
   ],
   imports: [
     CommonModule,
@@ -50,7 +50,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     MatPaginatorModule,
-    RouterModule
+    RouterModule,
   ],
   exports: [NavigationComponent,
     HeaderComponent,

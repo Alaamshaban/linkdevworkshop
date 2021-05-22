@@ -1,5 +1,14 @@
-.carousel{
-    background-color: red;
-}
 
-#responsive-image {  width: 100%;  max-height: 38vh; } 
+$desktop: 1280px;
+.home-footer{
+  margin-bottom:-35px;
+#responsive-image{
+  width: 100vw;
+  object-fit: fill;
+}
+}
+@media only screen and (min-width: $desktop) {
+    #responsive-image {
+      height: 80vh;
+    }
+  }

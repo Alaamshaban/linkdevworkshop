@@ -11,9 +11,9 @@ body {
 }
 .page {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
-  align-content: space-between;
+align-items: center;
+  width: calc(100% - (2*60px)); 
 }
 .mat-toolbar {
   background-color: #338997;

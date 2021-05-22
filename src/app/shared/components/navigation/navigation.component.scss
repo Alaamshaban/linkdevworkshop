@@ -10,4 +10,8 @@
     .mat-drawer-content{
       background-color: #EFEFEF;
     }
+    .mat-sidenav-content{
+      width: calc(100% - (3*60px)); 
+      padding: 30px 145px;
+    }
   }
