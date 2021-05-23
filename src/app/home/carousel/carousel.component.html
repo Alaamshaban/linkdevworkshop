@@ -1,10 +1,18 @@
-
 <ngu-carousel [inputs]="carouselBanner" [dataSource]="carouselTileItems$ | async" (onMove)="onmoveFn($event)">
-  <button NguCarouselPrev class='leftRs'>&lt;</button>
+    <button NguCarouselPrev class='leftRs'>&lt;</button>
 
-  <ngu-item *nguCarouselDef="let item; index as i;">
-<img [src]="item" class="banner"/>
-  </ngu-item>
+    <ngu-item class="carousel-item" *nguCarouselDef="let item; index as i;">
+        <img [src]="item" class="banner" />
+        <div class="centered">
+            <h1>
+                How have we helped?
+            </h1>
+            <p>is focused on inspiring the next generation of kids
+                <br/> HealthCare professionals
+            </p>
+            <button mat-button class="success-btn">Donate Now</button>
+        </div>
+    </ngu-item>
 
-  <button NguCarouselNext class='rightRs'>&gt;</button>
+    <button NguCarouselNext class='rightRs'>&gt;</button>
 </ngu-carousel>

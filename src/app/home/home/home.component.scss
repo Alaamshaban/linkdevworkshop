@@ -1,14 +1,31 @@
-
 $desktop: 1280px;
-.home-footer{
-  margin-bottom:-35px;
-#responsive-image{
-  width: 100vw;
-  object-fit: fill;
-}
-}
-@media only screen and (min-width: $desktop) {
-    #responsive-image {
-      height: 80vh;
-    }
+.home-footer {
+  margin-bottom: -35px;
+  position: relative;
+  text-align: center;
+  color: white;
+  #responsive-image {
+    width: 102vw;
+    object-fit: fill;
+    opacity: 0.8;
   }
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+}
+
+@media only screen and (min-width: $desktop) {
+  #responsive-image {
+    height: 130vh;
+  }
+  .centered {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

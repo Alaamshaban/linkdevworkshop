@@ -1,5 +1,5 @@
-
-    <mat-list-item [ngClass]="{'sub-page': isSubPage}" class="nav-item" [routerLink]="navItem.path" role="listitem">{{navItem.name}}</mat-list-item>
-    <ng-container *ngFor="let page of navItem.pages">
-        <app-nav-item [navItem]="page" [isSubPage]="true"></app-nav-item>
-    </ng-container>
+<mat-list-item [ngClass]="isSubPage  ? 'sub-page' : 'main-page'" class="nav-item" [routerLink]="navItem.path" role="listitem">
+    {{navItem.name}}</mat-list-item>
+<ng-container *ngFor="let page of navItem.pages">
+    <app-nav-item [navItem]="page" [isSubPage]="true"></app-nav-item>
+</ng-container>

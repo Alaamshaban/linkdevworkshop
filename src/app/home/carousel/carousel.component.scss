@@ -1,18 +1,20 @@
 
 $desktop: 1280px;
 .banner{
-  width: 100vw;
+  width: 110vw;
+  height: 70vh;
   object-fit: fill;
+  opacity: 0.8;
 }
 .leftRs {
   position: absolute;
   margin: auto;
   top: 0;
   bottom: 0;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
-  left: 0;
+  left: 50px;
   z-index: 1;
 }
 
@@ -21,19 +23,39 @@ $desktop: 1280px;
   margin: auto;
   top: 0;
   bottom: 0;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.3);
-  right: 15px;
+  right: 50px;
   z-index: 1;
 }
+.carousel-item{
+  position: relative;
+  text-align: center;
+}
+.centered {
+  position: absolute;
+  top: 35%;
+  left: 20%;
+}
+.success-btn{
+  background-color: #489730;
+}
 @media only screen and (min-width: $desktop) {
-  .banner{
-    height: 80vh;
-  }  
     ngu-carousel{
       margin-top: -30px;
       margin-left: 25px;
+    }
+    .leftRs {
+      left: 100px;
+    }
+    
+    .rightRs {
+      right: 100px;
+    }
+    .centered {
+      top: 20%;
+      left: 38%;
     }
 }
 

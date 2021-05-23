@@ -9,7 +9,7 @@ import { map, startWith, take } from 'rxjs/operators';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  images = ['assets/carousel-one', 'assets/carousel-two', 'assets/carousel-three'];
+  images = ['assets/carousel-one.jpg', 'assets/carousel-two', 'assets/carousel-three.jpg'];
   carouselBanner: NguCarouselConfig = {
     grid: { xs: 1, sm: 1, md: 1, lg: 1, all: 0 },
     slide: 1,
@@ -24,7 +24,7 @@ export class CarouselComponent implements OnInit {
     load: 2,
     custom: 'banner',
     loop: true,
-    touch: true, // touch is not currently in active for vertical carousel, will enable it in future build
+    touch: true,
     vertical: {
       enabled: false,
       height: 400
@@ -35,15 +35,15 @@ export class CarouselComponent implements OnInit {
   ngOnInit(): void {
     this.tempData = [];
 
-    this.carouselTileItems$ = interval(500).pipe(
+    this.carouselTileItems$ = interval(5000).pipe(
       startWith(-1),
       take(30),
       map((val, i) => {
-        // const data = (this.images = [
-        //   ...this.images,
-        //   this.images[i]
-        // ]);
-        return [this.images[0]];
+        const data = (this.images = [
+          ...this.images,
+          this.images[i]
+        ]);
+        return [this.images[i]];
       })
     );
   }
