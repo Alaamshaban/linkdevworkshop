@@ -11,3 +11,9 @@
 .mat-icon-button{
   width: 33px;
 }
+.position-fixed{
+  height: 64px;
+  position: fixed;
+  z-index: 100;
+  width: 100% !important;
+}

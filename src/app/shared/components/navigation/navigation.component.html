@@ -1,6 +1,6 @@
 <app-header></app-header>
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="over" class="sw-sidenav" autosize>
+    <mat-sidenav fixedInViewport="true" #sidenav mode="over" class="sw-sidenav" autosize>
         <mat-list role="list">
             <ng-container *ngFor="let link of links">
                 <app-nav-item [navItem]="link"></app-nav-item>
@@ -11,4 +11,4 @@
         <ng-content></ng-content>
     </mat-sidenav-content>
 </mat-sidenav-container>
-<app-footer ></app-footer>
+<app-footer></app-footer>
