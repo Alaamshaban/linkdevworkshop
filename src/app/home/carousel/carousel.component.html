@@ -2,7 +2,7 @@
     <button NguCarouselPrev class='leftRs'>&lt;</button>
 
     <ngu-item class="carousel-item" *nguCarouselDef="let item; index as i;">
-        <img [src]="item" class="banner" />
+        <img [src]="item" class="banner" loading="lazy" />
         <div class="centered">
             <h1>
                 How have we helped?

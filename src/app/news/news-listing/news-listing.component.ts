@@ -14,6 +14,7 @@ export class NewsListingComponent implements OnInit {
   pageSize = 10;
   splicedArticles: ArticlModel[];
   categories$: Observable<SourceCategoryModel[]>;
+  loading = false;
 
   constructor(private newsService: NewsService) { }
 
@@ -36,10 +37,12 @@ export class NewsListingComponent implements OnInit {
   }
 
   search(searchData): void {
+    this.loading = true;
     this.newsService.searchArticles(searchData).subscribe(res => {
       this.articles = res;
       this.pageLength = res.length;
       this.splicedArticles = this.articles.slice(((0 + 1) - 1) * this.pageSize).slice(0, this.pageSize);
+      this.loading = false;
     });
   }
 }

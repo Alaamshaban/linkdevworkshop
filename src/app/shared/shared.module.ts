@@ -8,6 +8,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import {RouterModule} from '@angular/router';
@@ -50,6 +51,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatCardModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
     RouterModule,
   ],
   exports: [NavigationComponent,
@@ -59,6 +61,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NewsItemComponent,
     NewsListComponent,
     MatIconModule,
+    MatProgressSpinnerModule,
     MatPaginatorModule,
     MatButtonModule]
 })

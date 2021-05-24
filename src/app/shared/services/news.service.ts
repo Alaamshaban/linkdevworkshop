@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 import { ArticlModel, SourceCategoryModel } from '../models/news.moddel';
 import { map } from 'rxjs/operators';
 import * as data from '../../newsapi.json';
@@ -15,11 +16,12 @@ export class NewsService {
   constructor() { }
 
   get Articles(): Observable<ArticlModel[]> {
-    return of(this.ArticlesList).pipe(map(
-      (result: ArticlModel[]) => result.sort((a, b) => {
-        return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-      })
-    ));
+    return of(this.ArticlesList).pipe(
+      map(
+        (result: ArticlModel[]) => result.sort((a, b) => {
+          return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+        })
+      ));
   }
 
   get Sources(): Observable<SourceCategoryModel[]> {
@@ -35,17 +37,17 @@ export class NewsService {
   searchArticles(filter): Observable<ArticlModel[]> {
     if (filter.category && filter.category !== 'none') {
       if (filter.text) {
-        return of(this.ArticlesList).pipe(map(
+        return of(this.ArticlesList).pipe(delay(1000), map(
           (result: ArticlModel[]) => result.filter(article => (article.sourceID === filter.category &&
             this.isTextMatched(article.title, filter.tex)))
         ));
       } else {
-        return of(this.ArticlesList).pipe(map(
+        return of(this.ArticlesList).pipe(delay(1000), map(
           (result: ArticlModel[]) => result.filter(article => (article.sourceID === filter.category))
         ));
       }
     } else {
-      return of(this.ArticlesList).pipe(map(
+      return of(this.ArticlesList).pipe(delay(1000), map(
         (result: ArticlModel[]) => result.filter(article => (this.isTextMatched(article.title, filter.text)))
       ));
     }
@@ -57,6 +59,6 @@ export class NewsService {
         return false;
       }
       return true;
+    }
   }
-}
 }

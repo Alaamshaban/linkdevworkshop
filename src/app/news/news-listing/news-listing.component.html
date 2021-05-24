@@ -1,13 +1,19 @@
-<div class="page">
-    <div class="page-title">
-        <h1>News</h1>
-    </div>
+
+<ng-contaner *ngIf="loading; else news">
+    <mat-spinner></mat-spinner>
+</ng-contaner>
+
+<ng-template #news>
+    <div class="page">
+        <div class="page-title">
+            <h1>News</h1>
+        </div>
         <app-search [categories$]="categories$" (SearchFilter)="search($event)"></app-search>
-    <app-news-list [articles]="splicedArticles"></app-news-list>
-    <div class="paginator">
-        <mat-paginator (page)="pageChangeEvent($event)" [length]="pageLength" [pageSize]="pageSize">
-        </mat-paginator>
+        <app-news-list [articles]="splicedArticles"></app-news-list>
+        <div class="paginator">
+            <mat-paginator (page)="pageChangeEvent($event)" [length]="pageLength" [pageSize]="pageSize">
+            </mat-paginator>
+        </div>
     </div>
-</div>
 
-
+</ng-template>
