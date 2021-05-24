@@ -12,8 +12,19 @@ body {
 .page {
   display: flex;
   flex-direction: column;
-align-items: center;
+  align-items: center;
   width: calc(100% - (2*60px)); 
+  margin-top: 50px;
+  color: #000;
+  .page-title{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    h1{
+      font:500 34px/42px Roboto, "Helvetica Neue", sans-serif;
+    }
+  }
 }
 .mat-toolbar {
   background-color: #338997;

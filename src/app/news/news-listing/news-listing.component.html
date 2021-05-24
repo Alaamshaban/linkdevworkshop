@@ -1,4 +1,7 @@
 <div class="page">
+    <div class="page-title">
+        <h1>News</h1>
+    </div>
         <app-search [categories$]="categories$" (SearchFilter)="search($event)"></app-search>
     <app-news-list [articles]="splicedArticles"></app-news-list>
     <div class="paginator">
